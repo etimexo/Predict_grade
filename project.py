@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 from sklearn import linear_model
+from sklearn.model_selection import train_test_split
 import sklearn
 from sklearn.utils import shuffle
 import matplotlib.pyplot as plt
@@ -18,18 +19,18 @@ df = shuffle(df) # Optional
 
 x = np.array(df.drop(columns=[predict]))
 y =np.array(df[predict])
-x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x, y, test_size=0.1)
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1)
 
-# Train the model 20 times for the best score and pass as the one we're using for prediction, saving as "best"
+# Train the model 30 times for the best score and pass as the one we're using for prediction, saving as "best"
 best = 0
-for _ in range(20):
-    x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x, y, test_size=0.1)
+for _ in range(30):
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1)
 
     linear = linear_model.LinearRegression()
 
     linear.fit(x_train, y_train)
     acc = linear.score(x_test, y_test)
-    print("Accuracy: " + str(acc))
+    # print("Accuracy: " + str(acc))
 
     if acc > best:
         best = acc
