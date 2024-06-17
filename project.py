@@ -53,3 +53,16 @@ plt.legend(loc=4)
 plt.xlabel(plot)
 plt.ylabel("Final Grade")
 plt.show()
+
+
+
+# # Calculate evaluation metrics
+# mae = mean_absolute_error(y_test, predicted)
+# mse = mean_squared_error(y_test, predicted)
+# rmse = np.sqrt(mse)
+# r2 = r2_score(y_test, predicted)
+
+# print(f"Mean Absolute Error (MAE): {mae}")
+# print(f"Mean Squared Error (MSE): {mse}")
+# print(f"Root Mean Squared Error (RMSE): {rmse}")
+# print(f"R-squared (R²): {r2}")

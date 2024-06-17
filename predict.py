@@ -15,3 +15,4 @@ new_students_data = np.array([
 # Make a prediction
 predicted_grades = model.predict(new_students_data)
 print(f"Predicted Grades: {predicted_grades}")
+
